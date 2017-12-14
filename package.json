@@ -1,0 +1,30 @@
+{
+  "name": "williams-quest",
+  "version": "0.0.1",
+  "description": "William's Quest",
+  "main": "app.js",
+  "scripts": {
+    "build": "webpack --env=dev --progress --profile --colors",
+    "help": "webpack --help",
+    "start-server": "webpack-dev-server --host 0.0.0.0 --inline",
+    "start": "npm run start-server"
+  },
+  "author": "Aro Wierzbowski",
+  "license": "ISC",
+  "keywords": [],
+  "devDependencies": {
+    "@types/node": "*",
+    "awesome-typescript-loader": "^3.2.3",
+    "clean-webpack-plugin": "^0.1.16",
+    "copy-webpack-plugin": "^4.0.1",
+    "html-webpack-plugin": "^2.30.1",
+    "typescript": "^2.5.2",
+    "typings": "*",
+    "webpack": "*",
+    "webpack-dev-server": "^2.8.2"
+  },
+  "dependencies": {
+    "webpack": "*",
+    "webpack-dev-server": "^2.8.1"
+  }
+}
