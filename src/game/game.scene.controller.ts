@@ -46,16 +46,16 @@ export class GameSceneController extends SceneController {
   enemy: Enemy;
   knight = new Knight(new Vector3(100, 0, 100));
   knightEnemy = new KnightEnemy(new Vector3(50, 0, 50));
-
+  banner: Banner;
   cameraOriginalLocation = Vector3.zero;
 
   sceneDidLoad() {
     super.sceneDidLoad();
 
-    let banner = new Banner(new Rectangle(0,0, 200, 25));
+    this.banner = new Banner(Rectangle.zero);
     let layer = new Layer();
 
-    layer.addSprite(banner);
+    layer.addSprite(this.banner);
     this.scene.addLayer(layer);
 
     // save intial camera location for futher use
@@ -87,6 +87,13 @@ export class GameSceneController extends SceneController {
 
     this.knightEnemy.rotation.x = -90;
     this.knightEnemy.scale = new Vector3(0.1, 0.1, 0.1);
+  }
+
+  sceneDidResize() {
+    super.sceneDidResize();
+
+    let w_2 = this.scene.width / 4.0;
+    this.banner.frame = new Rectangle(0, 0, w_2, w_2 / 4.0);
   }
 
   touchesBegan(touch: Touch) {

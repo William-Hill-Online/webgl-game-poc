@@ -45,6 +45,7 @@ export class SceneNavigationController {
 
   sceneController.sceneNavigationController = this;
   sceneController.sceneDidLoad();
+  sceneController.sceneDidResize();
   this.sceneControllers.push(sceneController);
  }
 
